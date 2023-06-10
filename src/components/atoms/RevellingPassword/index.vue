@@ -24,5 +24,11 @@ export default {
 @import '../../../assets/sass/mixins/alignment.scss';
 .view-eyes {
   @include displayAlignment(flex, center, center);
+  width: 10%;
+  cursor: pointer;
+
+  svg {
+    font-size: .8rem;
+  }
 }
 </style>
