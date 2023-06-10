@@ -1,38 +1,29 @@
 <template>
   <div class="container-page">
     <div class="card-login-form">
-      <header class="logo-container">
+      <div class="logo-container">
         <img :src="logo" alt="Logo devtech">
-      </header>
-      <form @submit.prevent="teste">
-        <div class="base-input">
-          <input type="text" placeholder="E-mail">
-        </div>
-        <div class="base-input">
-          <input type="password" placeholder="Senha">
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <footer>
-        <p>Esqueceu sua senha? clique aqui</p>
-      </footer>
+      </div>
+      <FormLogin @teste="login"/>
     </div>
   </div>
 </template>
 
 <script>
+import FormLogin from '@/components/organisms/FormLogin/index.vue';
 import logo from '../assets/img/logo-dev-tech-nobg.png';
 
 export default {
   name: 'LoginView',
+  components: { FormLogin },
   data() {
     return {
       logo: logo,
     }
   },
   methods: {
-    teste() {
-      console.log('clicou')
+    login(employeeData) {
+      console.log(employeeData)
     }
   }
 }
@@ -59,27 +50,6 @@ export default {
 
       img {
         width: 60%;
-      }
-    }
-
-    .base-input {
-      border: 1px solid #bebebe;
-      height: 2rem;
-      border-radius: 8px;
-      margin-bottom: 8px;
-
-      input {
-        outline: none;
-        width: 100%;
-        height: 100%;
-        padding: 0 10px;
-        border: none;
-        border-radius: 8px;
-        transition: .4s ease-in-out;
-
-        &:focus {
-          background-color: #e0f5fc;
-        }
       }
     }
   }
