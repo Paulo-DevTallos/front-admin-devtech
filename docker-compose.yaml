@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  app-devtech:
+    build: .
+    entrypoint: sh ./.docker/entrypoint.sh
+    container_name: app-devtech
+    volumes:
+      - .:/home/app/front-admin-ecommerce
+    working_dir: /home/app/front-admin-ecommerce
+    ports:
+      - 8085:8085
+    restart: always
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
