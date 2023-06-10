@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	color: #333333;
+	background: #F4F3EF;
+
+	ul {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
