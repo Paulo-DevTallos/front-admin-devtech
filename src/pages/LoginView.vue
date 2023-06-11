@@ -25,7 +25,6 @@ export default {
   methods: {
     login(employeeData) {
       console.log(employeeData)
-      alert('teste')
     }
   }
 }
