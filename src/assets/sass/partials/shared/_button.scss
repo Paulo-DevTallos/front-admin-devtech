@@ -1,0 +1,20 @@
+.def-btn {
+  height: 2.2rem;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #009acc;
+  color: #fff;
+  filter: drop-shadow(-2px 2px 1px #007aa36b);
+
+  &:active {
+    background-color: #007aa3;
+  }
+}
+
+.def-btn-format {
+  border-radius: 12px;
+}
