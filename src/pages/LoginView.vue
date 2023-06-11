@@ -5,6 +5,7 @@
         <img :src="logo" alt="Logo devtech">
       </div>
       <FormLogin @teste="login"/>
+      <!--Criar uma seção para "esqueci a senha"-->
     </div>
   </div>
 </template>
@@ -24,6 +25,7 @@ export default {
   methods: {
     login(employeeData) {
       console.log(employeeData)
+      alert('teste')
     }
   }
 }

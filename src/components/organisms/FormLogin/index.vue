@@ -10,23 +10,37 @@
       :hideRevellingPassword="true"
       placeholder="Senha"
     />
-    <button type="submit">Login</button>
+    <div class="btn-spacing">
+      <MainButton
+        class="primary def-btn-format"
+        :btn_title="'Login'"
+        type="submit"
+      />
+    </div>
   </form>
 </template>
 
 <script>
 import BaseInput from '../../../components/molecules/BaseInput/index.vue';
+import MainButton from '../../../components/atoms/MainButton/index.vue';
 
 export default {
   name: 'FormLogin',
-  components: { BaseInput },
+  components: { BaseInput, MainButton },
   data() {
     return {
       employee: {
-        employee_email: "teste",
-        password: "123456"
+        employee_email: "",
+        password: ""
       }
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.btn-spacing {
+  margin-top: 20px;
+  text-align: center;
+}
+</style>
