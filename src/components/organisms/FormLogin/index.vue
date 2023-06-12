@@ -1,8 +1,7 @@
 <template>
-  <form @submit.prevent="$emit('teste', employee)">
+  <form @submit.prevent="$emit('login', employee)">
     <BaseInput
       v-model="employee.employee_email"
-      :hideRevellingPassword="false"
       placeholder="E-mail"
     />
     <BaseInput
@@ -26,6 +25,7 @@ import MainButton from '../../../components/atoms/MainButton/index.vue';
 
 export default {
   name: 'FormLogin',
+  emits: ["login"],
   components: { BaseInput, MainButton },
   data() {
     return {

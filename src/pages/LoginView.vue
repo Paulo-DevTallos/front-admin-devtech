@@ -1,10 +1,10 @@
 <template>
-  <div class="container-page">
+  <div class="view-container">
     <div class="card-login-form">
-      <div class="logo-container">
-        <img :src="logo" alt="Logo devtech">
+      <div class="mb-6">
+        <img class="w-7/12 m-auto object-center" :src="logo" alt="Logo devtech">
       </div>
-      <FormLogin @teste="login"/>
+      <FormLogin @login="submitLogin"/>
       <!--Criar uma seção para "esqueci a senha"-->
     </div>
   </div>
@@ -23,37 +23,23 @@ export default {
     }
   },
   methods: {
-    login(employeeData) {
-      console.log(employeeData)
-    }
-  }
+    submitLogin(employee) {
+      this.$store.dispatch("employeeStore/login", employee)
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/sass/mixins/alignment.scss';
-.container-page {
-  background-color: #009acc;
-  min-height: 100vh;
-  @include displayAlignment(flex, center, center);
+.view-container {
+  @apply flex justify-center sm:bg-primary-blue items-center h-screen;
 
   .card-login-form {
-    background-color: #fff;
-    width: 400px;
+    @apply sm:bg-white;
+    width: 450px;
     padding: 40px;
     border-radius: 12px;
     filter: drop-shadow(-5px 5px 5px #0000002c);
-
-    .logo-container {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 30px;
-
-      img {
-        width: 60%;
-      }
-    }
   }
 }
-
 </style>
