@@ -3,6 +3,5 @@ export default {
   employeeName: "",
   employeeEmail: "",
   employeeRoles: "",
-  employeeId: "",
   employeeRegistration: "",
 }

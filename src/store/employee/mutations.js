@@ -1,9 +1,9 @@
 export default {
   LOGIN(state, payload) {
-    state.employeeName = payload.employee_name;
-    state.employeeEmail = payload.employee_email;
+    console.log(state)
+    state.employeeName = payload.employeeName;
+    state.employeeEmail = payload.employeeEmail;
     state.employeeRoles = payload.roles;
-    state.employeeId = payload.id;
     state.employeeRegistration = payload.registration;
   }
 }
