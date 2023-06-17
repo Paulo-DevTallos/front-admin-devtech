@@ -1,17 +1,22 @@
 <template>
-  <div class="base-input">
-    <input
-      v-bind="$attrs"
-      v-model="inputValue"
-      :type="inputType"
-      v-if="!hideRevellingPassword ? inputType = 'text' : 'password'"
-      @blur="handleValue"
-    />
-    <RevellingPassword
+  <div class="input-box w-full">
+    <div class="base-input">
+      <input
+        v-bind="$attrs"
+        :type="!fiel_email ? inputType : 'email'"
+        v-if="!hideRevellingPassword ? inputType = 'text' : 'password'"
+        @blur="handleValue"
+        v-model="inputValue"
+      />
+      <RevellingPassword
       @toggle="togglePassword"
       v-if="hideRevellingPassword"
       :isPassword="isPasswordVisible"
-    />
+      />
+    </div>
+    <label class="label-input">
+      <small>{{ error_message }}</small>
+    </label>
   </div>
 </template>
 
@@ -23,17 +28,15 @@ export default {
   components: { RevellingPassword },
   emits: ["handleValue"],
   props: {
-    currentValue: {
-      type: String,
-    },
-    hideRevellingPassword: {
-      type: Boolean,
-    },
+    currentValue: { type: String },
+    hideRevellingPassword: { type: Boolean },
+    error_message: { type: String },
+    fiel_email: { type: Boolean },
   },
   data() {
     return {
       inputType: "password",
-			inputValue: "",
+        inputValue: "",
     }
   },
   computed: {
@@ -54,26 +57,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.base-input {
-  border: 1px solid #bebebe;
-  height: 2rem;
-  border-radius: 8px;
+.input-box {
   margin-bottom: 8px;
-  display: flex;
+  .base-input {
+    border: 1px solid #bebebe;
+    height: 2.3rem;
+    border-radius: 8px;
+    display: flex;
 
-  &:focus {
-    background-color: #e0f5fc;
+    &:focus {
+      background-color: #e0f5fc;
+    }
+
+    input {
+      outline: none;
+      width: 95%;
+      height: 100%;
+      padding: 0 10px;
+      border: none;
+      border-radius: 8px;
+      transition: .4s ease-in-out;
+      background-color: transparent;
+    }
   }
 
-  input {
-    outline: none;
-    width: 95%;
-    height: 100%;
-    padding: 0 10px;
-    border: none;
-    border-radius: 8px;
-    transition: .4s ease-in-out;
-    background-color: transparent;
+  .label-input {
+    color: red;
   }
 }
-</style>-->
+</style>

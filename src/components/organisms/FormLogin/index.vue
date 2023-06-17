@@ -2,12 +2,14 @@
   <form @submit.prevent="$emit('login', employee)">
     <BaseInput
       v-model="employee.employee_email"
+      :fiel_email="true"
       placeholder="E-mail"
     />
     <BaseInput
       v-model="employee.password"
       :hideRevellingPassword="true"
       placeholder="Senha"
+      :input_title="'Senha'"
     />
     <div class="btn-spacing">
       <MainButton
