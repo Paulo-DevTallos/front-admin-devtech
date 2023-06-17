@@ -14,9 +14,17 @@ const router = createRouter({
       component: () => import('../pages/LoginView.vue'),
     },
     {
-      path: '/home',
-      name: 'viewhome',
-      component: () => import('../pages/HomeView.vue'),
+      path: '/app',
+      name: 'template',
+      redirect: 'app/home',
+      component: () => import('../template/DefaultLayout.vue'),
+      children: [
+        {
+          path: 'home',
+          name: 'home',
+          component: () => import('../pages/HomeView.vue')
+        }
+      ]
     }
   ]
 })
