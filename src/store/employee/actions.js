@@ -22,8 +22,5 @@ export default {
         window.location.replace("/home")
       }
     })
-    .catch(error => {
-      console.error(error.message)
-    })
   }
 }
