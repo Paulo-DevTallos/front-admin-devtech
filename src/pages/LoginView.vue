@@ -7,24 +7,47 @@
       <FormLogin @login="submitLogin"/>
       <!--Criar uma seção para "esqueci a senha"-->
     </div>
+    <ToastStatus
+      :type_error="typeError"
+      :error_message="errorMessage"
+      :validate_fields="validateFields"
+      :status="typeStatus"
+    />
   </div>
 </template>
 
 <script>
 import FormLogin from '@/components/organisms/FormLogin/index.vue';
 import logo from '../assets/img/logo-dev-tech-nobg.png';
+import ToastStatus from '@/components/Popups/ToastStatus.vue';
 
 export default {
   name: 'LoginView',
-  components: { FormLogin },
+  components: { FormLogin, ToastStatus },
   data() {
     return {
       logo: logo,
+      validateFields: false,
+      typeError: "",
+      errorMessage: "",
+      typeStatus: ""
     }
   },
   methods: {
     submitLogin(employee) {
       this.$store.dispatch("employeeStore/login", employee)
+        .catch(error => {
+          let message = error.response.data.message;
+
+          this.errorMessage = message;
+          this.typeError = 'Erro ao realizar o login';
+          this.typeStatus = 'error';
+          this.validateFields = true;
+
+          setTimeout(() => {
+            this.validateFields = !this.validateFields;
+          }, 3000)
+        })
     },
   },
 }
