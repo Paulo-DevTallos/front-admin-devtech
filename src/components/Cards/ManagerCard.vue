@@ -29,7 +29,7 @@ export default {
   display: flex;
   width: 25%;
   height: 97px;
-  filter: drop-shadow(-2px 2px 4px #0000003b);
+  filter: drop-shadow(-2px 2px 4px #00000023);
   border-radius: 2px;
 
   .icon-container {
