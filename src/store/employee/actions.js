@@ -19,7 +19,7 @@ export default {
 
         commit("LOGIN", responseData);
 
-        window.location.replace("/home")
+        window.location.replace("/app")
       }
     })
   }
