@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+Base do projeto
+//https://adminlte.io/themes/AdminLTE/pages/widgets.html
+https://www.atendi.com.br/gestao-compras-estoque.html

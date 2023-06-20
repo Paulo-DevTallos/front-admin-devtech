@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <Sidebar />
-    <div>
-      <header>Cabeçalho</header>
+    <div class="main-painel">
+      <MainHeader />
       <main>
         <Content />
       </main>
@@ -14,9 +14,10 @@
 <script>
 import Content from './Content.vue';
 import Sidebar from '../components/Sidebar/index.vue';
+import MainHeader from '../components/MainHeader/index.vue';
 
 export default {
-  components: { Content, Sidebar },
+  components: { Content, Sidebar, MainHeader },
   name: "DefaultLayout",
 }
 </script>
@@ -42,7 +43,7 @@ export default {
 
 	.main-painel {
 		width: 85%;
-		padding: 10px;
+    min-height: 100vh;
 		overflow-y: auto;
 	}
 }
