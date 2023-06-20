@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar-container">
     <div class="image-container">
-      <router-link :to="{ name: 'template' }">
+      <router-link :to="{ name: 'dashboard' }">
         <img :src="logo" alt="Logo DevTech" />
       </router-link>
     </div>
@@ -15,13 +15,16 @@
         </small>
       </div>
     </div>
+    <SidebarMenu />
   </aside>
 </template>
 
 <script>
 import logo from '../../assets/img/logo-dev-tech-nobg.png';
+import SidebarMenu from './SidebarMenu.vue';
 
 export default {
+  components: { SidebarMenu },
   name: 'Sidebar',
   data() {
     return {
@@ -34,7 +37,6 @@ export default {
 <style lang="scss" scoped>
 aside {
   background: #222D32;
-  border-right: 1px solid #bebebe;
   width: 15%;
   overflow: hidden;
   color: #fff;
