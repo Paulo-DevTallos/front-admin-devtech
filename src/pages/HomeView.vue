@@ -48,5 +48,6 @@ export default {
   padding: 0 10px;
   display: flex;
   gap: 34px;
+  z-index: 0;
 }
 </style>
