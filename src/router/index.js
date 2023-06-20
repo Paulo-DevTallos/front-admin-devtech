@@ -16,16 +16,26 @@ const router = createRouter({
     {
       path: '/app',
       name: 'template',
-      redirect: 'app/home',
+      redirect: 'app/dashboard',
       component: () => import('../template/DefaultLayout.vue'),
       children: [
         {
-          path: 'home',
-          name: 'home',
+          path: 'dashboard',
+          name: 'dashboard',
           component: () => import('../pages/HomeView.vue')
-        }
+        },
+        {
+          path: 'employees',
+          name: 'employees',
+          component: () => import('../pages/EmployeesView.vue')
+        },
       ]
-    }
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: () => import("../pages/NotFound.vue"),
+    },
   ]
 })
 
