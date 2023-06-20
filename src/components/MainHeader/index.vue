@@ -3,19 +3,33 @@
     <div class="menu-hamburguer">
       <Icon icon="tabler:menu-2" />
     </div>
-    <div class="profile">
+    <div class="profile" @click="showCardOptions">
       <div>P</div>
       <strong>Nome do usuário</strong>
     </div>
+    <OptionsCard v-if="hideCardOptions"/>
   </header>
 </template>
 
 <script>
 import { Icon } from '@iconify/vue';
+import OptionsCard from '../Cards/OptionsCard.vue';
 
 export default {
   name: 'MainHeader',
-  components: { Icon }
+  components: { Icon, OptionsCard },
+  data() {
+    return {
+      hideCardOptions: false
+    }
+  },
+
+  methods: {
+    showCardOptions() {
+      this.hideCardOptions = !this.hideCardOptions;
+      console.log(!this.hideCardOptions)
+    }
+  }
 }
 </script>
 
@@ -27,6 +41,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   .menu-hamburguer {
     cursor: pointer;
