@@ -17,7 +17,6 @@ export default {
 
 <style lang="scss" scoped>
 .typography-spacing {
-  padding: 20px 10px;
   display: flex;
   align-items: center;
 

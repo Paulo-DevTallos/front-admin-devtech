@@ -1,5 +1,8 @@
 <template>
-  <Typography :message_page="'Dashboard'"/>
+  <div class="page-title">
+    <Typography :message_page="'Dashboard'"/>
+    <span>Visão geral do sistema de controle</span>
+  </div>
   <div class="dashboard-container ">
     <ManagerCard
       style="background-color: #00C0EF;"
@@ -44,6 +47,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.page-title {
+  padding: 20px 10px;
+
+  span {
+    color: #929292;
+  }
+}
 .dashboard-container {
   padding: 0 10px;
   display: flex;
